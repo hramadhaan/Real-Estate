@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:real_estate/provider/posts.dart';
 import 'package:real_estate/provider/stories.dart';
 import 'package:real_estate/provider/users.dart';
 import 'package:real_estate/screen/home_screen.dart';
 import 'package:real_estate/screen/login_screen.dart';
 import 'package:real_estate/screen/main_screen.dart';
+import 'package:real_estate/screen/post_posting.dart';
 import 'package:real_estate/screen/post_story.dart';
 import 'package:real_estate/screen/splash_screen.dart';
 
@@ -34,6 +36,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider.value(value: User()),
         ChangeNotifierProvider.value(value: Stories()),
+        ChangeNotifierProvider.value(value: Posts()),
       ],
       child: Consumer<User>(
         builder: (ctx, auth, _) => MaterialApp(
@@ -59,6 +62,7 @@ class MyApp extends StatelessWidget {
               ))),
           routes: {
             PostStoryScreen.routeName: (ctx) => PostStoryScreen(),
+            PostPostingScreen.routeName: (ctx) => PostPostingScreen(),
           },
         ),
       ),

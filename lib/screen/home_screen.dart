@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:real_estate/widget/home_input.dart';
+import 'package:real_estate/widget/home_post.dart';
 import 'package:real_estate/widget/home_story.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -15,7 +16,6 @@ class _HomeScreenState extends State<HomeScreen> {
     return SingleChildScrollView(
       physics: BouncingScrollPhysics(),
       child: Container(
-        height: MediaQuery.of(context).size.height,
         color: Color(0xffe8e9e9),
         padding: EdgeInsets.only(),
         child: Column(
@@ -31,6 +31,10 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 9,
             ),
             HomeStory(),
+            SizedBox(
+              height: 9,
+            ),
+            HomePost(),
           ],
         ),
       ),

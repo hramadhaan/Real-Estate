@@ -40,6 +40,7 @@ dependencies:
   multi_image_picker:
   cached_network_image:
   http:
+  flutter_shimmer:
 
 dev_dependencies:
   flutter_test:

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:real_estate/screen/post_posting.dart';
 
 class HomeInput extends StatelessWidget {
   const HomeInput({Key key}) : super(key: key);
@@ -22,6 +23,7 @@ class HomeInput extends StatelessWidget {
         readOnly: true,
         onTap: () {
           print('Apa yang anda pikirkan');
+          Navigator.of(context).pushNamed(PostPostingScreen.routeName);
         },
         style: TextStyle(
           fontSize: 14,

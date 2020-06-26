@@ -43,10 +43,16 @@ class Stories with ChangeNotifier {
         HttpHeaders.authorizationHeader: 'Bearer ${token}',
       });
       final data = jsonDecode(response.body);
-      final dataResponse = data['data'] as List;
+      final message = data['message'] as String;
+      if (message.contains('Story tidak ada.')) {
+        print(message);
+      } else {
+        final dataResponse = data['data'] as List;
 
-      _items = dataResponse.map<Story>((json) => Story.fromJson(json)).toList();
-      notifyListeners();
+        _items =
+            dataResponse.map<Story>((json) => Story.fromJson(json)).toList();
+        notifyListeners();
+      }
     } catch (e) {
       print(e.toString());
     }
